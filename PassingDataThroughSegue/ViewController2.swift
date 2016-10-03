@@ -5,18 +5,21 @@
 import UIKit
 
 
+protocol SecondViewControllerProtocol {
+    func saveData(data: String) // this function the first controllers
+}
+
 class ViewController2: UIViewController {
     
-    @IBOutlet weak var dataLabel: UILabel!
+    var delegate: SecondViewControllerProtocol?
     
-    var dataText: String = ""
-    
+    @IBOutlet weak var dataTextField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         
-        dataLabel.text = dataText
     }
     
     override func didReceiveMemoryWarning() {
@@ -24,4 +27,7 @@ class ViewController2: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func saveButtonClicked(_ sender: AnyObject) {
+        delegate?.saveData(data: dataTextField.text!)
+    }
 }

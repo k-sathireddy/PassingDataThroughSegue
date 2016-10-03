@@ -25,30 +25,26 @@
                                 </constraints>
                                 <state key="normal" title="Display View Controller 2"/>
                                 <connections>
-                                    <segue destination="lO3-0q-6YI" kind="push" identifier="senddata" id="89m-O6-cXj"/>
+                                    <action selector="navigateToSecondViewControllerOnButtonClick:" destination="iTK-pH-Nwj" eventType="touchUpInside" id="JhC-CN-enB"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xKM-Hf-jOF">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Cre-H0-djt"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No data saved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytV-m5-Ycb">
+                                <frame key="frameInset" minX="89" minY="453" width="199" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xKM-Hf-jOF" secondAttribute="trailing" constant="79" id="6NO-my-YTw"/>
-                            <constraint firstItem="xKM-Hf-jOF" firstAttribute="leading" secondItem="b0A-Ox-qra" secondAttribute="leading" constant="79" id="JyE-at-2wV"/>
                             <constraint firstItem="9ML-zs-QOt" firstAttribute="centerY" secondItem="b0A-Ox-qra" secondAttribute="centerY" id="VIe-r5-7SS"/>
                             <constraint firstItem="9ML-zs-QOt" firstAttribute="centerX" secondItem="b0A-Ox-qra" secondAttribute="centerX" id="hrk-xJ-X9v"/>
-                            <constraint firstItem="9ML-zs-QOt" firstAttribute="top" secondItem="xKM-Hf-jOF" secondAttribute="bottom" constant="112" id="lwc-RB-YnZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eZs-OA-yAO"/>
                     <connections>
-                        <outlet property="dataTextField" destination="xKM-Hf-jOF" id="GDK-Hn-yKp"/>
+                        <outlet property="dataLabel" destination="ytV-m5-Ycb" id="r3m-CZ-2BJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kc-YW-qb1" sceneMemberID="firstResponder"/>
@@ -67,25 +63,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is View Controller 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEv-GQ-rEz">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="212" id="H3m-ru-m9d"/>
-                                    <constraint firstAttribute="height" constant="44" id="Yjs-Fl-Fax"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="59s-Ul-3uJ">
+                                <frame key="frameInset" minX="66" minY="259" width="243" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfZ-kJ-uHN">
+                                <frame key="frameInset" minX="170" minY="369" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="lO3-0q-6YI" eventType="touchUpInside" id="pNS-Pg-y16"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.34509803919999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="vEv-GQ-rEz" firstAttribute="centerX" secondItem="4BD-9Z-qUy" secondAttribute="centerX" id="G7r-rC-wu6"/>
-                            <constraint firstItem="vEv-GQ-rEz" firstAttribute="centerY" secondItem="4BD-9Z-qUy" secondAttribute="centerY" id="Jtv-HF-vfd"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wXU-ci-0W8"/>
                     <connections>
-                        <outlet property="dataLabel" destination="vEv-GQ-rEz" id="StO-89-oEF"/>
+                        <outlet property="dataTextField" destination="59s-Ul-3uJ" id="waL-D2-EDv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dlm-6m-LGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
